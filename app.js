@@ -2,11 +2,8 @@ const express = require ("express");
 const morgan = require ("morgan");
 const cors =require ("cors");
 
-const authRouter = require('./routes/authRouter.js');
-const productRouter = require ("./routes/productRouter.js");
-const reviewsRouter = require ('./routes/reviewsRouter.js');
-const storenearestRouter = require ('./routes/storesRouter.js')
-const cartRouter =require('./routes/CartRout.js');
+// const authRouter = require('./routes/authRouter.js');
+
 
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -20,11 +17,8 @@ app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/user", authRouter);
-app.use("/api/products", productRouter);
-app.use("/api/customer-reviews", reviewsRouter);
-app.use("/api/stores", storenearestRouter);
-app.use("/api/cart", cartRouter);
+// app.use("/api/user", authRouter);
+
 
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });
