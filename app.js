@@ -1,6 +1,9 @@
 const express = require ("express");
 const morgan = require ("morgan");
 const cors =require ("cors");
+const Visit=require ("./model/visits");
+
+const visitsRouter = require ("./routes/visitsRouter.js");
 
 // const authRouter = require('./routes/authRouter.js');
 
@@ -17,6 +20,8 @@ app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.json());
 
+app.use("/api/visits", visitsRouter);
+
 // app.use("/api/user", authRouter);
 
 
@@ -28,6 +33,14 @@ app.use((err, req, res, next) => {
   const { status = 500, message = "Server error" } = err;
   res.status(status).json({ message });
 });
+
+const initializeCounter = async () => {
+  const existing = await Visit.findOne();
+  if (!existing) {
+    await new Visit({ count: 0 }).save();
+  }
+};
+initializeCounter();
 
 mongoose.connect(DB_HOST)
 .then(()=>{
