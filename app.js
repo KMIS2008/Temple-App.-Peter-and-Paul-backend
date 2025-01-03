@@ -34,13 +34,13 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-const initializeCounter = async () => {
-  const existing = await Visit.findOne();
-  if (!existing) {
-    await new Visit({ count: 0 }).save();
-  }
-};
-initializeCounter();
+// const initializeCounter = async () => {
+//   const existing = await Visit.findOne();
+//   if (!existing) {
+//     await new Visit({ count: 0 }).save();
+//   }
+// };
+// initializeCounter();
 
 mongoose.connect(DB_HOST)
 .then(()=>{
