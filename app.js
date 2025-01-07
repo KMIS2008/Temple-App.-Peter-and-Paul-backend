@@ -21,6 +21,7 @@ app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.json());
 
+
 app.use("/api/visits", visitsRouter);
 app.use("/api/email", emailRouter);
 

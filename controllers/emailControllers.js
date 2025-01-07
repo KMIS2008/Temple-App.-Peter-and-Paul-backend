@@ -2,6 +2,7 @@ const ctrlWrapper = require('../helpers/ctrlWrapper.js');
 const  sgMail = require('@sendgrid/mail');
 require('dotenv').config();
 
+
 const {SENGRINE_API_KEY} = process.env;
 sgMail.setApiKey(SENGRINE_API_KEY);
 
@@ -12,7 +13,7 @@ const sendServices = async(req, res, next)=>{
     // Формирование письма
     const msg = {
       // to: "ocu.petropavlivske@gmail.com", // Кому отправить
-      to: "lion.irisha@gmail.com", // Кому отправить
+      to: "makarenko.mariia@scandy.kiev.ua", // Кому отправить
       from: "lion.irisha@gmail.com", // Укажите вашу подтвержденную почту SendGrid
       subject: "Запит послуги",
       text: `
@@ -40,6 +41,8 @@ const sendServices = async(req, res, next)=>{
     // res.status(201).json(newContact);
 }
 
-module.exports = {
-  sendServices: ctrlWrapper(sendServices),
-}
+// module.exports = {
+//   sendServices: ctrlWrapper(sendServices),
+// }
+
+module.exports={sendServices};
