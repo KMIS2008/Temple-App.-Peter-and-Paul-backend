@@ -1,4 +1,3 @@
-const ctrlWrapper = require('../helpers/ctrlWrapper.js');
 const  sgMail = require('@sendgrid/mail');
 require('dotenv').config();
 

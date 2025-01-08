@@ -5,6 +5,7 @@ const Visit=require ("./model/visits");
 
 const visitsRouter = require ("./routes/visitsRouter.js");
 const emailRouter=require('./routes/emailRouter.js');
+const checkRouter=require('./routes/checkRouter.js');
 
 // const authRouter = require('./routes/authRouter.js');
 
@@ -24,6 +25,7 @@ app.use(express.json());
 
 app.use("/api/visits", visitsRouter);
 app.use("/api/email", emailRouter);
+app.use("/api/check-password", checkRouter);
 
 
 // app.use("/api/user", authRouter);
