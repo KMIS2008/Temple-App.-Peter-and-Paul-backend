@@ -13,8 +13,8 @@ const sendServices = async(req, res, next)=>{
     // Формирование письма
     const msg = {
       // to: "ocu.petropavlivske@gmail.com", // Кому отправить
-      to: "makarenko.mariia@scandy.kiev.ua", // Кому отправить
-      from: "lion.irisha@gmail.com", // Укажите вашу подтвержденную почту SendGrid
+      to: "lion.irisha@gmail.com", // Кому отправить
+      from: "lion.irisha@ukr.net", // Укажите вашу подтвержденную почту SendGrid
       subject: "Запит послуги",
       text: `
         Тип послуги: ${type}
