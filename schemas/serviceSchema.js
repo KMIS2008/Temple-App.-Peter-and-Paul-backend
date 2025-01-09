@@ -4,7 +4,7 @@ const Joi = require('joi');
     type: Joi.string().required(), 
     fullName: Joi.string().required(),  
     email: Joi.string().required(),   
-    phone: Joi.string(),      
+    phone: Joi.string().allow(''),      
 })
 
 module.exports= {serviceSchema}
