@@ -1,7 +1,7 @@
 const express = require ("express");
 const visitsRouter = express.Router();
 // const validateBody = require ('../helpers/validateBody.js');
-const schema= require ("../schemas/visitSchema.js");
+// const schema= require ("../schemas/visitSchema.js");
 
 const ctrl = require("../controllers/visitsControllers");
 
