@@ -7,7 +7,7 @@ const isValidId = require('../middlewares/isValidId');
 
 const serviceRouter=express.Router();
 
-// serviceRouter.get("/", ctrl.addService);
+serviceRouter.get("/", ctrl.getService);
 
 serviceRouter.post("/", validateBody(schema.serviceSchema), ctrl.addService);
 

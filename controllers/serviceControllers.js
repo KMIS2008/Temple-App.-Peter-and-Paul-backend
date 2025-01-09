@@ -10,6 +10,14 @@ const addService = async(req, res, next)=>{
     res.status(201).json(newService);
 }
 
+const getService = async (req, res, next) => {
+    
+    const allService = await Service.find();
+    
+    res.status(200).json(allService);  
+};  
+
 module.exports = {
     addService: ctrlWrapper(addService),
+    getService: ctrlWrapper(getService)
 }
