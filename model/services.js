@@ -14,6 +14,8 @@ const serviceSchema= new Schema({
       },
     phone:  {
         type: String,
+        required: false, // Поле не обязательно
+        default: null,   // По умолчанию null
       },
 
 },{versionKey:false, timestamps:true});
