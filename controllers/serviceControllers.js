@@ -17,7 +17,21 @@ const getService = async (req, res, next) => {
     res.status(200).json(allService);  
 };  
 
+
+const deleteService = async (req, res) => {
+    const {id} = req.params;
+    const delService = await Service.findOneAndDelete({
+        _id: id,
+    });
+   
+    if (!delService){
+        throw HttpError(404)
+    } 
+    res.status(200).json(delService);
+};
+
 module.exports = {
     addService: ctrlWrapper(addService),
-    getService: ctrlWrapper(getService)
+    getService: ctrlWrapper(getService),
+    deleteService:ctrlWrapper(deleteService),
 }

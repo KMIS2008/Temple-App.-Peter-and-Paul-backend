@@ -11,6 +11,6 @@ serviceRouter.get("/", ctrl.getService);
 
 serviceRouter.post("/", validateBody(schema.serviceSchema), ctrl.addService);
 
-// cartRouter.delete("/:id", authdentificate, isValidId, ctrl.deleteCart);
+serviceRouter.delete("/:id", isValidId, ctrl.deleteService);
 
 module.exports = serviceRouter;
