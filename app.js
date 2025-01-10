@@ -18,6 +18,7 @@ const {DB_HOST} = process.env;
 mongoose.set('strictQuery', true);
 
 const app = express();
+
 app.use(cors());
 app.use(morgan("tiny"));
 
