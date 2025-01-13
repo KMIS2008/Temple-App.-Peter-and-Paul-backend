@@ -7,6 +7,7 @@ const visitsRouter = require ("./routes/visitsRouter.js");
 const emailRouter=require('./routes/emailRouter.js');
 const checkRouter=require('./routes/checkRouter.js');
 const serviceRouter=require('./routes/serviceRouter.js');
+const feedbackRouter = require('./routes/feedbackRouter.js');
 
 // const authRouter = require('./routes/authRouter.js');
 
@@ -29,6 +30,7 @@ app.use("/api/visits", visitsRouter);
 app.use("/api/email", emailRouter);
 app.use("/api/check-password", checkRouter);
 app.use("/api/service", serviceRouter);
+app.use("/api/feedback", feedbackRouter);
 
 
 // app.use("/api/user", authRouter);
